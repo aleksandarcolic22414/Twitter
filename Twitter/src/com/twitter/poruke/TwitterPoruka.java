@@ -35,11 +35,14 @@ public class TwitterPoruka {
 		this.korisnik = korisnik;
 	}
 	/**
-	 * Metoda vraca String "poruka".
-	 * @return "poruka"
+	 * Metoda vraca vrednost atributa poruka.
+	 * @return poruka
 	 */
+
+//	Greska prilikom implementacije metode getPoruka.
+//	Nove vraca se vrednost poruka vec String "poruka"
 	public String getPoruka() {
-		return "poruka";
+		return poruka;
 	}
 	/**
 	 * Metoda postavlja vrednost atributa poruka na unetu vrednost ako je
@@ -47,8 +50,12 @@ public class TwitterPoruka {
 	 * 
 	 * @param poruka,Vrednost koju dodeljujemo atributu poruka.
 	 */
+	
+//	Greska prilikom implementacije metode setPoruka.
+//	Proverava se duzina atributa poruka umesto duzine
+//	unesenog parametra poruka
 	public void setPoruka(String poruka) {
-		if (poruka==null || this.poruka.length()>140)
+		if (poruka==null || poruka.length()>140)
 			throw new RuntimeException(
 					"Poruka mora biti uneta i mora imati najvise 140 znakova");
 		this.poruka = poruka;
