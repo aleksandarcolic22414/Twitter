@@ -4,14 +4,21 @@ import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
 public class Twitter {
-	
+	/**Atribut poruke koji predstavlja listu poruka*/
 	private LinkedList<TwitterPoruka> poruke =
 			new LinkedList<TwitterPoruka>();
-	
+	/**
+	 * Metoda koja vraca Listu poruka
+	 * @return poruke kao listu
+	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke(){
 		return poruke;
 	}
-	
+	/**
+	 * Metoda koja ubacuje novu poruku u listu poruka
+	 * @param korisnik , nova vrednost atributa korisnik
+	 * @param poruka , nova vrednost atributa poruka
+	 */
 	public void unesi(String korisnik, String poruka) {
 		//Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
@@ -20,7 +27,18 @@ public class Twitter {
 		//Poruka se unosi u listu na kraj
 		poruke.addLast(tp);
 	}
-	
+	/**
+	 * Metoda nalazi poruke koje sadrze odgovarajuci tag i upisuje ih u niz TwitterPoruka[].
+	 * Ukoliko je vrednost atributa max <= 0 , max se postavlja na 100.
+	 * @param maxBroj , maksimalni broj unetih poruka
+	 * @param tag , vrednost taga preko kojeg se pretrazuju poruke
+	 * @throws java.lang.RuntimeException ukoli je vrednost parametra tag
+	 * <ul> 
+  	 * 		<li>null</li>
+ 	 * 		<li>prazan String</li>
+ 	 * </ul>
+	 * @return niz poruka 
+	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag==null || tag == "")
 			throw new RuntimeException("Morate uneti tag");
