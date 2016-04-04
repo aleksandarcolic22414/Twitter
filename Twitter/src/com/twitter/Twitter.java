@@ -9,7 +9,6 @@ public class Twitter {
 			new LinkedList<TwitterPoruka>();
 	/**
 	 * Metoda koja vraca Listu poruka
-	 * 
 	 * @return poruke kao listu
 	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke(){
@@ -17,18 +16,13 @@ public class Twitter {
 	}
 	/**
 	 * Metoda koja ubacuje novu poruku u listu poruka
-	 * 
 	 * @param korisnik , nova vrednost atributa korisnik
 	 * @param poruka , nova vrednost atributa poruka
 	 */
-	
-//	setKorisnik metoda postavlja vrednost atributa korisnik na "korisnik"
-//	bez obzira sta se prosledi ka parametar.
-//	Otklonili smo gresku.
 	public void unesi(String korisnik, String poruka) {
 		//Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
-		tp.setKorisnik(korisnik);
+		tp.setKorisnik("korisnik");
 		tp.setPoruka(poruka);
 		//Poruka se unosi u listu na kraj
 		poruke.addLast(tp);
@@ -36,7 +30,6 @@ public class Twitter {
 	/**
 	 * Metoda nalazi poruke koje sadrze odgovarajuci tag i upisuje ih u niz TwitterPoruka[].
 	 * Ukoliko je vrednost atributa max <= 0 , max se postavlja na 100.
-	 * 
 	 * @param maxBroj , maksimalni broj unetih poruka
 	 * @param tag , vrednost taga preko kojeg se pretrazuju poruke
 	 * @throws java.lang.RuntimeException ukoli je vrednost parametra tag
@@ -46,12 +39,6 @@ public class Twitter {
  	 * </ul>
 	 * @return niz poruka 
 	 */
-	
-//	Prva poruka se ubacuje na drugo mesto u nizu tako da ne bi doslo do
-//	izuzetka moramo ispraviti ovu metodu.
-//	Takodje brojac moze da ide do maxBroj vrednosti zato sto je niz
-//	inicijalizovan na maxBroj elemenenata
-	
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag==null || tag == "")
 			throw new RuntimeException("Morate uneti tag");
@@ -69,11 +56,11 @@ public class Twitter {
 		//se prekida.
 		for (int i = 0; i < poruke.size(); i++)
 			if (poruke.get(i).getPoruka().indexOf(tag)!=-1)
-				if (brojac <= maxBroj){
-					rezultat[brojac]=poruke.get(i);
+				if (brojac < maxBroj){
+					rezultat[brojac+1]=poruke.get(i);
 					brojac++;
 				}
-				else break;
+			else break;
 		return rezultat;
 	}
 } 
