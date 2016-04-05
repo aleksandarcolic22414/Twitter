@@ -1,6 +1,11 @@
 package com.twitter.poruke;
 
 /**
+ * Klasa TwitterPoruka sluzi za skladistenje poruke na twitter-u
+ * i njenog vlasnika (korisnik).Koristi se u kombinaciji sa
+ * klasom Twitter koja cuva twitter poruke kao listu
+ * poruka i omogucava razne manipulacije sa njima.
+ * 
  * @author Aleksandar Colic 224/14
  */
 
@@ -10,7 +15,6 @@ public class TwitterPoruka {
 	private String korisnik;
 	/** Atribut koji sadrzi poruku */
 	private String poruka;
-	
 	/**
 	 * Vraca se String korisnik.
 	 * @return vrednost atributa korisnik.
@@ -49,6 +53,9 @@ public class TwitterPoruka {
 	 * duzina unetog String-a manja od 140 i ako je inicijalizovan.
 	 * 
 	 * @param poruka,Vrednost koju dodeljujemo atributu poruka.
+	 * 
+	 * @throws java.lang.RuntimeException ukoliko ulazni parametar nije
+	 * inicijalizovan ili ukoliko je duzina unetog String-a veca od 140.
 	 */
 	
 //	Greska prilikom implementacije metode setPoruka.

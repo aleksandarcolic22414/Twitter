@@ -3,6 +3,15 @@ package com.twitter;
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
+/**
+ * Klasa Twitter se koristi za manipulaciju
+ * twitter porukama.Twitter poruke se cuvaju kao
+ * lista gde svaki element predstavlja objekat
+ * klase Twitter poruka.
+ *
+ * @author Aleksandar Colic 224/14
+ */
+
 public class Twitter {
 	/**Atribut poruke koji predstavlja listu poruka*/
 	private LinkedList<TwitterPoruka> poruke =
