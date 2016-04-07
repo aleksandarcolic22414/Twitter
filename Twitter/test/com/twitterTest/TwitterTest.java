@@ -1,4 +1,4 @@
-package junitTestiranje;
+package com.twitterTest;
 
 import static org.junit.Assert.*;
 
